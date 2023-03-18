@@ -1,23 +1,28 @@
-#include<stdio.h>
+#include <stdio.h>
+
 /**
- * main - A program that prints all possible different
- * program that prints all possible different
- * Return: 0 (Success)
-*/
+ * main - prints all possible different combinations of two digits
+ * Return: ALways 0 (Success)
+ */
 int main(void)
 {
-	int x = '0';
-	int y;
+	int n, m;
 
-	for (; x <= 9; x++)
+	for (n = 48; n <= 56; n++)
 	{
-		for (y = x; y <= 9; y++)
+		for (m = 49; m <= 57; m++)
 		{
-			putchar(x);
-			putchar(y);
+			if (m > n)
+			{
+				putchar(n);
+				putchar(m);
+				if (n != 56 || m != 57)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
 		}
-		putchar(',');
-		putchar(' ');
 	}
 	putchar('\n');
 	return (0);
